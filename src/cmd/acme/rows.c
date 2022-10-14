@@ -333,7 +333,7 @@ rowdump(Row *row, char *file)
 			warning(nil, "can't find file for dump: $home not defined\n");
 			goto Rescue;
 		}
-		sprint(buf, "%s/acme.dump", home);
+		sprint(buf, "%s/var/state/acme.dump", home);
 		file = buf;
 	}
 	fd = create(file, OWRITE, 0600);
@@ -531,7 +531,7 @@ rowload(Row *row, char *file, int initing)
 			warning(nil, "can't find file for load: $home not defined\n");
 			goto Rescue1;
 		}
-		sprint(buf, "%s/acme.dump", home);
+		sprint(buf, "%s/var/state/acme.dump", home);
 		file = buf;
 	}
 	b = Bopen(file, OREAD);
